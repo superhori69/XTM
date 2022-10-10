@@ -9,3 +9,5 @@
 ### Check out my other project
 
 * [Pinball Remastered X - Space cadet](https://github.com/Xan-Lua/PBX)
+
+Thanks for visiting my project.
