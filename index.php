@@ -10,10 +10,22 @@
     <body>
         <h1>X Manager</h1>
 
+        <p>
+            <?php
+            //Check display status
+            if(isset($_SESSION['add']))
+            {
+                echo $_SESSION['add'];
+
+                unset($_SESSION['add']);
+            }
+            ?>
+        </p>
+
         <!-- Menu Start -->
         <div class="Menu">
 
-            <a href="<?php echo SITEURL; ?>"?>Home</a>
+            <a href="<?php echo SITEURL; ?>">Home</a>
 
             <a href="#">To Do</a>
             <a href="#">Doing</a>
@@ -39,18 +51,60 @@
                     <th>Actions</th>
                 </tr>
 
-                <tr>
-                    <td>1. </td>
-                    <td>Design a Website</td>
-                    <td>Medium</td>
-                    <td>23/05/2022</td>
-                    <td>
-                        <a href="#">Update</a>
+                <?php
 
-                        <a href="#">Delete</a>
+                $db = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD) or die(mysqli_error());
 
-                    </td>
-                </tr>
+                $db_select = mysqli_select_db($db, DB_NAME) or die(mysqli_error());
+
+                $sql = "SELECT * FROM tbl_tasks";
+
+                $snipple = 1;
+
+                $dofuck = mysqli_query($db, $sql);
+
+                if($dofuck==true)
+                {
+                    $cr = mysqli_num_rows($dofuck);
+
+                    if($cr>0)
+                    {
+                        while($row=mysqli_fetch_assoc($dofuck))
+                        {
+                            $task_id = $row['task_id'];
+                            $task_name = $row['task_name'];
+                            $priority = $row['priority'];
+                            $deadline = $row['deadline'];
+                            ?>
+
+                            <tr>
+                                <td><?php echo $snipple++; ?>. </td>
+                                <td><?php echo $task_name; ?></td>
+                                <td><?php echo $priority; ?></td>
+                                <td><?php echo $deadline; ?></td>
+                                <td>
+
+                                    <a href="#">Update </a>
+
+                                    <a href="<?php echo SITEURL; ?>delete-task.php?task_id=<?php echo $task_id; ?>">Delete</a>
+
+                                </td>
+                            </tr>
+
+                            <?php
+                        }
+                    }
+                    else
+                    {
+                        ?>
+                        <tr>
+                            <td colespan="5">No Task Added Tet.</td>
+                        </tr>
+                        <?php
+                    }
+                }
+
+                ?>
             </table>
 
         </div>

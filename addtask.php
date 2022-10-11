@@ -13,6 +13,19 @@
 
         <h1>X Manager</h1>
 
+        <p>
+            <?php
+
+                if(isset($_SESSION['add_fail']))
+                {
+                    echo $_SESSION['add_fail'];
+
+                    unset($_SESSION['add_fail']);
+                }
+
+            ?>
+        </p>
+
         <a href="<?php echo SITEURL; ?>">Home</a>
 
         <h3>Add Task</h3>
@@ -122,13 +135,28 @@
 
         $db_select2 = mysqli_select_db($db2, DB_NAME) or die(mysqli_error());
 
-        echo $sql2 = "INSERT INTO tbl_tasks SET
+        $sql2 = "INSERT INTO tbl_tasks SET
             task_name = '$task_name',
             task_description = '$task_description',
             list_id = '$task_name',
             priority = '$priority',
             deadline = '$deadline'
         ";
+
+        $dofuck2 = mysqli_query($db2, $sql2);
+
+        if($dofuck2==true)
+        {
+            $_SESSION['add'] = "Task Added Successfully";
+
+            header('location:'.SITEURL);
+        }
+        else
+        {
+            $_SESSION['add_fail'] = "Task Add Failed";
+
+            header('location:'.SITEURL.'addtask.php');
+        }
 
     }
 
