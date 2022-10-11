@@ -111,7 +111,7 @@
             echo $sql2 = "UPDATE tbl_lists SET
                     list_name = '$list_name',
                     list_description = '$list_description'
-                    WHERE list_id=$list_id
+                    WHERE list_id='$list_id'
                 ";
 
             // Execute query
@@ -137,7 +137,7 @@
                 $_SESSION['update_fail'] = "Failed to Update List";
 
                 // Reload because of failure
-                header('location' . SITEURL . 'addlist.php');
+                header('location' . SITEURL . 'update.php');
             }
 
         }

@@ -19,6 +19,30 @@
 
                 unset($_SESSION['add']);
             }
+            if(isset($_SESSION['delete_task']))
+            {
+                echo $_SESSION['delete_task'];
+
+                unset($_SESSION['delete_task']);
+            }
+            if(isset($_SESSION['delete_task_fail']))
+            {
+                echo $_SESSION['delete_task_fail'];
+
+                unset($_SESSION['delete_task_fail']);
+            }
+            if(isset($_SESSION['update_task']))
+            {
+                echo $_SESSION['update_task'];
+
+                unset($_SESSION['update_task']);
+            }
+            if(isset($_SESSION['update_task_fail']))
+            {
+                echo $_SESSION['update_task_fail'];
+
+                unset($_SESSION['update_task_fail']);
+            }
             ?>
         </p>
 
@@ -84,9 +108,9 @@
                                 <td><?php echo $deadline; ?></td>
                                 <td>
 
-                                    <a href="#">Update </a>
+                                    <a href="<?php echo SITEURL; ?>updatetask.php?task_id=<?php echo $task_id; ?>">Update </a>
 
-                                    <a href="<?php echo SITEURL; ?>delete-task.php?task_id=<?php echo $task_id; ?>">Delete</a>
+                                    <a href="<?php echo SITEURL; ?>deletetask.php?task_id=<?php echo $task_id; ?>">Delete</a>
 
                                 </td>
                             </tr>
