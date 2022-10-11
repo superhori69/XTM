@@ -9,7 +9,7 @@
 
     <body>
 
-        <h1>Task Manager</h1>
+        <h1>X Manager</h1>
 
         <a href="<?php echo SITEURL;?>">Home</a>
         <a href="<?php echo SITEURL; ?>managelist.php">Manage Lists</a>

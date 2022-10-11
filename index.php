@@ -8,7 +8,7 @@
     </head>
 
     <body>
-        <h1>Task Manager</h1>
+        <h1>X Manager</h1>
 
         <!-- Menu Start -->
         <div class="Menu">

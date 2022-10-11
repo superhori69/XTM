@@ -9,7 +9,7 @@
 
     <body>
 
-        <h1>Task Manager</h1>
+        <h1>X Manager</h1>
 
         <a href="<?php echo SITEURL; ?>">Home</a>
 
@@ -37,6 +37,19 @@
                     echo $_SESSION['delete_fail'];
 
                     unset($_SESSION['delete_fail']);
+                }
+                if(isset($_SESSION['update']))
+                {
+                    echo $_SESSION['update'];
+
+                    unset($_SESSION['update']);
+                }
+
+                if(isset($_SESSION['update_fail']))
+                {
+                    echo $_SESSION['update_fail'];
+
+                    unset($_SESSION['update_fail']);
                 }
             ?>
         </p>
