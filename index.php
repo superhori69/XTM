@@ -27,6 +27,8 @@
 
         <div class="all-tasks">
 
+            <a href="<?php echo SITEURL; ?>addtask.php">Add Task</a>
+
             <table>
 
                 <tr>
