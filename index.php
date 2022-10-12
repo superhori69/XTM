@@ -51,10 +51,31 @@
 
             <a href="<?php echo SITEURL; ?>">Home</a>
 
-            <a href="#">To Do</a>
-            <a href="#">Doing</a>
-            <a href="#">Done</a>
+            <?php
 
+                $db2 = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD) or die(mysqli_error());
+
+                $db_select2 = mysqli_select_db($db2, DB_NAME) or die(mysqli_error());
+
+                $sql2="SELECT * FROM tbl_lists";
+
+                $dofuck2 = mysqli_query($db2, $sql2);
+
+                if($dofuck2==true)
+                {
+                    while($row2=mysqli_fetch_assoc($dofuck2))
+                    {
+                        $list_id = $row2['list_id'];
+                        $list_name = $row2['list_name'];
+                        ?>
+
+                        <a href="<?php echo SITEURL?>listtask.php?list_id=<?php echo $list_id; ?>"><?php echo $list_name; ?></a>
+
+                        <?php
+                    }
+                }
+
+            ?>
             <a href="<?php echo SITEURL; ?>managelist.php">Manage Lists</a>
         </div>
         <!-- Menu End -->
