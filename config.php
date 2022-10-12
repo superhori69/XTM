@@ -7,3 +7,5 @@
     define('DB_PASSWORD', 'pass123');
     define('DB_NAME', 'xtaskmanager');
     define('SITEURL', 'http://127.0.0.1/xtm/');
+
+    //Thanks for using my project.
