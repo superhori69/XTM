@@ -8,6 +8,9 @@
 ### X Manager Setup
 
 Installation is simple, just drag the files into an empty directory on your webhost, for example `/htdocs/tm/`.
+Then edit the config.php and complete the `DB_SERVER`,`DB_USERNAME`,`DB_PASSWORD` and `DB_NAME`
+with your database credentials and `SITEURL` with your websites url and path, for example `https://xan-core.tk/xtm/`. Its necessary to add the `/` at the end.
+
 #### Requirements
 
 * `PHP 7.4` - `PHP 8.1` Anything in between works (Tested on `PHP 8.1`)
