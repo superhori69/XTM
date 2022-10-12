@@ -9,10 +9,12 @@
 
     <head>
         <title>X Manager - Home</title>
+        <link rel="stylesheet" href="<?php echo SITEURL?>assets/style.css"/>
     </head>
 
     <body>
-        <h>X Manager</h>
+    <div class="wrapper">
+        <h1>X Manager</h1>
 
         <div class="Menu">
 
@@ -47,11 +49,11 @@
         </div>
 
         <div class="all-task">
-            <a href="<?php echo SITEURL;?>addtask.php">Add Task</a>
+            <a class="btn-primary" href="<?php echo SITEURL;?>addtask.php">Add Task</a>
 
-            <table>
+            <table class="tbl-full">
                 <tr>
-                    <th>S.N.</th>
+                    <th>NR.</th>
                     <th>Task Name</th>
                     <th>Priority</th>
                     <th>Deadline</th>
@@ -93,9 +95,9 @@
                                     <td><?php echo $deadline; ?></td>
                                     <td>
 
-                                        <a href="<?php echo SITEURL; ?>updatetask.php?task_id=<?php echo $task_id; ?>">Update </a>
+                                        <a class="btn-update" href="<?php echo SITEURL; ?>updatetask.php?task_id=<?php echo $task_id; ?>">Update </a>
 
-                                        <a href="<?php echo SITEURL; ?>deletetask.php?task_id=<?php echo $task_id; ?>">Delete</a>
+                                        <a class="btn-delete" href="<?php echo SITEURL; ?>deletetask.php?task_id=<?php echo $task_id; ?>">Delete</a>
 
                                     </td>
                                 </tr>
@@ -106,7 +108,7 @@
                         {
                             ?>
                             <tr>
-                                <td colespan="5">No Task Added Tet.</td>
+                                <td colespan="5">No Task Added Yet.</td>
                             </tr>
                             <?php
                         }
@@ -114,7 +116,7 @@
                 ?>
             </table>
         </div>
-
+    </div>
     </body>
 
 

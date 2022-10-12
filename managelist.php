@@ -5,15 +5,21 @@
 <html>
     <head>
         <title>X Manager - Manage List</title>
+        <link rel="stylesheet" href="<?php echo SITEURL?>assets/style.css"/>
     </head>
 
     <body>
+    <div class="wrapper">
 
         <h1>X Manager</h1>
 
-        <a href="<?php echo SITEURL; ?>">Home</a>
 
-        <h3>Manage Lists Page</h3>
+        <div class="Menu">
+        <a href="<?php echo SITEURL; ?>">Home</a>
+        </div>
+
+
+        <h3>Manage Lists</h3>
 
         <p>
             <?php
@@ -56,11 +62,11 @@
         <!-- Table to display lists starts here -->
         <div class="all-lists">
 
-            <a href="<?php echo SITEURL; ?>addlist.php">Add List</a>
+            <a class="btn-primary" href="<?php echo SITEURL; ?>addlist.php">Add List</a>
 
-            <table>
+            <table class="tbl-full">
                 <tr>
-                    <th>S.N.</th>
+                    <th>NR.</th>
                     <th>List Name</th>
                     <th>Actions</th>
                 </tr>
@@ -97,8 +103,8 @@
                                         <td><?php echo $sn++; ?>. </td>
                                         <td><?php echo $list_name; ?></td>
                                         <td>
-                                            <a href="<?php echo SITEURL; ?>update.php?list_id=<?php echo $list_id; ?>">Update</a>
-                                            <a href="<?php echo SITEURL; ?>delete.php?list_id=<?php echo $list_id; ?>">Delete</a>
+                                            <a class="btn-update" href="<?php echo SITEURL; ?>update.php?list_id=<?php echo $list_id; ?>">Update</a>
+                                            <a class="btn-delete" href="<?php echo SITEURL; ?>delete.php?list_id=<?php echo $list_id; ?>">Delete</a>
                                         </td>
                                     </tr>
 
@@ -123,5 +129,6 @@
             </table>
         </div>
         <!-- Table to display lists starts here -->
+    </div>
     </body>
 </html>

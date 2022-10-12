@@ -7,10 +7,11 @@
 
     <head>
         <title>X Manager - Add Task</title>
+        <link rel="stylesheet" href="<?php echo SITEURL?>assets/style.css"/>
     </head>
 
     <body>
-
+    <div class="wrapper">
         <h1>X Manager</h1>
 
         <p>
@@ -25,14 +26,14 @@
 
             ?>
         </p>
-
+        <div class="Menu">
         <a href="<?php echo SITEURL; ?>">Home</a>
-
+        </div>
         <h3>Add Task</h3>
 
         <form method="POST" action="">
 
-            <table>
+            <table class="tbl-half">
                 <tr>
                     <td>Task Name:</td>
                     <td><input type="text" name="task_name" placeholder="Type Your Task Name" required="required"></td>
@@ -108,12 +109,12 @@
                 </tr>
 
                 <tr>
-                    <td><input type="submit" name="submit" value="Submit" /></td>
+                    <td><input class="btn-primary" type="submit" name="submit" value="Submit" /></td>
                 </tr>
             </table>
 
         </form>
-
+    </div>
     </body>
 
 </html>

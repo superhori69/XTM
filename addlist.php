@@ -5,17 +5,19 @@
 <html>
     <head>
         <title>X Manager - Add List</title>
+        <link rel="stylesheet" href="<?php echo SITEURL?>assets/style.css"/>
     </head>
 
     <body>
-
+    <div class="wrapper">
         <h1>X Manager</h1>
 
+        <div class="Menu">
         <a href="<?php echo SITEURL;?>">Home</a>
         <a href="<?php echo SITEURL; ?>managelist.php">Manage Lists</a>
+        </div>
 
-
-        <h3>Add List Page</h3>
+        <h3>Add List</h3>
 
         <p>
             <?php
@@ -46,14 +48,14 @@
                     </tr>
 
                     <tr>
-                        <td><input type="submit" name="submit" value="Submit" /></td>
+                        <td><input class="btn-primary" type="submit" name="submit" value="Submit" /></td>
                     </tr>
                 </table>
 
         </form>
 
         <!-- Form To Add List Ends Here -->
-
+    </div>
     </body>
 </html>
 

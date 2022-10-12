@@ -42,9 +42,11 @@
 <html>
     <head>
         <title>X Manager - Update</title>
+        <link rel="stylesheet" href="<?php echo SITEURL?>assets/style.css"/>
     </head>
 
     <body>
+    <div class="wrapper">
 
         <h1>X Manager</h1>
 
@@ -55,7 +57,7 @@
 
         </div>
 
-        <h3>Update List Page</h3>
+        <h3>Update List</h3>
 
         <form method="POST" action="">
 
@@ -75,12 +77,12 @@
                 </tr>
 
                 <tr>
-                    <td><input type="submit" name="submit" value="Update"></td>
+                    <td><input class="btn-primary" type="submit" name="submit" value="Update"></td>
                 </tr>
             </table>
 
         </form>
-
+    </div>
     </body>
 
 
